@@ -1,0 +1,128 @@
+{% extends "layout-2.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+ 
+{% block content %}
+
+
+
+<main id="content" role="main">
+
+<div class="grid-row"> 
+  {% include "includes/utility-navigation-overview.html" %} 
+  </div>
+
+
+  <div class="grid-row">
+      <div class="column-two-thirds">
+      <div class="back">
+        <a href="/space-production" class="link-back">Production space</a>
+      </div>
+    </div>
+  </div>
+
+<!-- <nav class="breadcrumbs" aria-label="Breadcrumbs">
+  <ol itemscope itemtype="http://schema.org/BreadcrumbList">
+    <li class="breadcrumbs__item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+      <a href="dashboard" itemprop="item"><span itemprop="name">GDS-Design overview</span></a>
+    </li>
+    <li class="breadcrumbs__item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+      <a href="space-production" itemprop="item"><span itemprop="name">Production</span></a>
+    </li>
+    <li class="breadcrumbs__item breadcrumbs__item--active" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+      <a href="#" itemprop="item"><span itemprop="name">web-frontend</span></a>
+    </li>
+  </ol>
+</nav> -->
+
+  <div class="grid-row">
+
+    <div class="column-two-thirds">
+      <h1 class="heading-large"><span class="heading-secondary">App</span>
+            datahub-demo</h1>
+
+      <table>
+        <h3 class="heading-small" style="margin-top:60px;">App details</h3>
+        <tbody>
+          <tr>
+            <td>Name:</td>
+            <td>datahub-demo</td>
+          </tr>
+          <tr>
+            <td>Detected buildpack:</td>
+            <td>Ruby</td>
+          </tr>
+          <tr>
+            <td>Instances:</td>
+            <td>1/1</td>
+          </tr>
+          <tr>
+            <td>Memory:</td>
+            <td>1gb</td>
+          </tr>
+          <tr>
+            <td>Disk quota:</td>
+            <td>1gb</td>
+          </tr>
+          <tr>
+            <td>Status:</td>
+            <td>running</td>
+          </tr>
+          <tr>
+            <td>url:</td>
+            <td>datahub-demo.cloudapps.digital</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <table>
+        <h3 class="heading-small" style="margin-top:60px;">Deployments</h3>
+        <tbody>
+          <tr>
+            <td>Package updated at:</td>
+            <td>12 Dec 17 – 12:34</td>
+          </tr>
+          <tr>
+            <td>Deployed by:</td>
+            <td>tony.rudd@government.gov.uk</td>
+          </tr>
+          <tr>
+            <td><a href="">View last deploy logs</a></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td><a href="">Find out more about deploying on the PaaS</a></td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- <table>
+        <h3 class="heading-small">Alerts</h3>
+        <p>The app has the following alerts set up:</p>
+        <tbody>
+          <tr>
+            <td>Deployments: </td>
+            <td>all members</td>
+          </tr>
+          <tr>
+            <td>App goes down:</td>
+            <td><span class="bold-small"><a href="">tom.dolan@digital.cabinet-office.gov.uk</a></span></td>
+          </tr>
+        </tbody>
+      </table> -->
+
+
+  <h2 class="heading-small" style="margin-top:60px;">On the commandline</h2>
+    <p>You can also view the same information on the commandline, to see details for all of your apps use:</p>
+    <p><code>cf apps</code></p>
+    <p><a href="">Read more about using PaaS on the commandline.</a></p>
+  </div>
+</div>
+</main>
+
+{% endblock %}
+
+
