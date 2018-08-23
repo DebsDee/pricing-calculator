@@ -1,0 +1,99 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+ 
+
+<main id="content" role="main">
+
+<nav class="breadcrumbs" aria-label="Breadcrumbs">
+  <ol itemscope itemtype="http://schema.org/BreadcrumbList">
+    <li class="breadcrumbs__item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+      <a href="https://www.gov.uk/service-toolkit#components" itemprop="item"><span itemprop="name">Components</span></a>
+    </li>
+    <li class="breadcrumbs__item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+      <a href="/product-page" itemprop="item"><span itemprop="name">GOV.UK PaaS</span></a>
+    </li>
+    <li class="breadcrumbs__item breadcrumbs__item--active" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+      <a href="#main" itemprop="item"><span itemprop="name">Features, roadmap and security</span></a>
+    </li>
+  </ol>
+</nav>
+
+<div class="container">
+  <div class="grid-row">
+    <div class="column-one-third">
+      <nav class="sub-navigation">
+        <ol itemscope itemtype="http://schema.org/ItemList">
+          <li class="sub-navigation__item sub-navigation" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+            <a href="features.html" itemprop="item"><span itemprop="name">Features</span></a>
+          </li>
+          <li class="sub-navigation__item sub-navigation__item--active" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+            <a href="roadmap.html" itemprop="item"><span itemprop="name">Roadmap</span></a>
+          </li>
+          <li class="sub-navigation__item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+            <a href="information-assurance.html" itemprop="item"><span itemprop="name">Information assurance</span></a>
+          </li>
+         <li class="sub-navigation__item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+            <a href="security.html" itemprop="item"><span itemprop="name">Security</span></a>
+          </li>
+        </ol>
+      </nav>
+    </div>
+
+
+    <div class="column-two-thirds">
+      <h1 class="heading-xlarge">Roadmap</h1>
+      <p>This is what we plan to deliver in the coming months, and what we expect to work on over the longer term.</p>
+      <p>It’s a guide that’s updated quarterly, and things might change. Get in touch with the team, via <a href="mailto:gov-uk-paas-support@digital.cabinet-office.gov.uk">gov-uk-paas-support@digital.cabinet-office.gov.uk</a>, to find out more about our roadmap and to let us know about features you need.</p>
+
+      <h2 class="heading-medium">January to March 2018</h2>
+      <ul class="list list-bullet">
+        <li>Backing services (public beta): make Redis, Elasticsearch and MongoDB available for production use</li>
+        <li>UK hosting (alpha): create a UK-based GOV.UK PaaS instance and scope the work involved in making this available for production use</li>
+        <li>internal-only applications (alpha): explore ways of enabling private, non-internet-facing communication between applications, including service discovery</li>
+        <li>GOV.UK PaaS web admin tool (alpha): let users see the platform resources they’re using and manage basic admin tasks themselves</li>
+        <li>publish a pricing calculator, so users know how much GOV.UK PaaS will cost them</li>
+        <li>improve the support we provide for Docker images</li>
+      </ul>
+
+      <h2 class="heading-medium">April 2018 and onwards</h2>
+      <ul class="list list-bullet">
+        <li>UK-based GOV.UK PaaS (private beta)</li>
+        <li>automated billing</li>
+        <li>enhanced protective monitoring</li>
+        <li>file storage</li>
+        <li>metrics for backing services</li>
+        <li>improved access control (IP whitelisting/auth)</li>
+        <li>RabbitMQ</li>
+        <li>Logging as a Service</li>
+      </ul>
+
+      <h2 class="heading-medium">Longer term possibilities</h2>
+      <ul class="list list-bullet">
+        <li>PSN connectivity</li>
+        <li>CDN as a Service</li>
+        <li>CI as a Service</li>
+        <li>Memcache</li>
+        <li>VM isolation</li>
+      </ul>
+      
+      <h2 class="heading-medium">Development stages</h2>
+      <p>Most of the features we’re building go through the following stages of development:</p>
+      <ul class="list list-bullet">
+        <li>alpha: exploring the problem space and investigating possible solutions</li>
+        <li>private beta: an early working version of the feature that’s tested by selected partners in a development environment - not suitable for use in production</li>
+        <li>public beta: a production-ready version of the feature that has been subjected to Cabinet Office/GDS information approval and security governance</li>
+        <li>live: a production-ready service that has been improved based on feedback during public beta</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+</main>
+
+{% endblock %}

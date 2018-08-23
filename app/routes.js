@@ -6,6 +6,9 @@ router.get('/', function (req, res) {
   res.render('index')
 })
 
+
+
+
 // add your routes here
 router.get('/request-trial-redirect', function (req, res) {
   // get the answer from the query string (eg. ?over18=false)
@@ -18,7 +21,7 @@ router.get('/request-trial-redirect', function (req, res) {
     // if over18 is any other value (or is missing) render the page requested
     res.redirect('/request-trial-2')
   }
-})
+});
 
 
 // add your routes here

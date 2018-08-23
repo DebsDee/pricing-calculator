@@ -3,6 +3,8 @@
 {% block page_title %}
   GOV.UK prototype kit
 {% endblock %}
+
+{% set organisations = [{ name: "Ministry of Space Innovation" }, { name: "Department for Organisation" }, { name: "Another org" }, { name: "XYZ department" }] %}
  
 {% block content %}
 
@@ -11,20 +13,18 @@
 <main id="content" role="main">
   <div class="grid-row">
         <div class="column-full">
-          <h1 class="heading-large">You’re a member of 4 organisations</h1>
+                 {% if (organisations.length) <=1 %} <h1 class="heading-large">You’re a member of {{ organisations.length }} organisation</h1>
+                    {% else %}
+                    <h1 class="heading-large">You’re a member of {{ organisations.length }} organisations</h1>
+                    {% endif %}
+
                       <h2 class="lede">Choose an organisation</h2>
         </div>
+     {% for organisation in organisations %}
         <a href="dashboard">
             <div class="column-full">
             <div class="org-section-box">
-                  <h3 class="heading-medium">Ministry of Space Innovation</h3>
-            </div>
-            </div>
-        </a>
-        <a href="dashboard">
-            <div class="column-full">
-            <div class="org-section-box">
-                  <h3 class="heading-medium">Department for Organisation</h3>
+                  <h3 class="heading-medium">{{ organisation.name }}</h3>
                   <!-- <ul class="list-bullet font-xsmall">
                       <li>View spaces and apps</li>
                       <li>View memory quotas</li>
@@ -33,22 +33,7 @@
             </div>
             </div>
         </a>
-        <a href="dashboard">
-            <div class="column-full">
-            <div class="org-section-box">
-                  <h3 class="heading-medium">Another org</h3>
-            </div>
-            </div>
-        </a>
-        <a href="dashboard">
-            <div class="column-full">
-            <div class="org-section-box">
-                  <h3 class="heading-medium">XYZ department</h3>
-            </div>
-            </div>
-        </a>
-    </div>
-
+        {% endfor %}
 
 <div class="grid-row">
     <div class="column-full">
