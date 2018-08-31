@@ -6,7 +6,19 @@ router.get('/', function (req, res) {
   res.render('index')
 })
 
+router.get('/:version(v1|v2)', function (req, res) {
+  req.session.data['version'] = req.params.version
+  console.log(req.session.data)
+  res.render(`${req.params.version}/version-index`)
+})
 
+router.get('/:page', function (req, res) {
+  if (req.session.data['version'] == undefined) {
+
+  } else {
+    res.redirect(`${req.session.data['version']}/${req.params.page}`)
+  }
+})
 
 
 // add your routes here
