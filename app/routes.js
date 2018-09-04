@@ -1,37 +1,37 @@
-var express = require('express')
-var router = express.Router()
+var express = require('express');
+var router = express.Router();
 
 // Route index page
 router.get('/', function (req, res) {
-  res.render('index')
-})
+  res.render('index');
+});
 
 router.get('/:version(v1|v2)', function (req, res) {
-  req.session.data['version'] = req.params.version
+  req.session.data['version'] = req.params.version;
   console.log(req.session.data)
-  res.render(`${req.params.version}/version-index`)
-})
+  res.render(`${req.params.version}/version-index`);
+});
 
 router.get('/:page', function (req, res) {
   if (req.session.data['version'] == undefined) {
 
   } else {
-    res.redirect(`${req.session.data['version']}/${req.params.page}`)
+    res.redirect(`${req.session.data['version']}/${req.params.page}`);
   }
-})
+});
 
 
 // add your routes here
 router.get('/request-trial-redirect', function (req, res) {
   // get the answer from the query string (eg. ?over18=false)
-  var radiogroup = req.query.radiogroup
+  var radiogroup = req.query.radiogroup;
 
   if (radiogroup === 'request-trial-your-details') {
     // redirect to the relevant page
-    res.redirect('/request-trial-your-details')
+    res.redirect('/request-trial-your-details');
   } else {
     // if over18 is any other value (or is missing) render the page requested
-    res.redirect('/request-trial-2')
+    res.redirect('/request-trial-2');
   }
 });
 
@@ -39,23 +39,23 @@ router.get('/request-trial-redirect', function (req, res) {
 // add your routes here
 router.get('/support-options', function (req, res) {
   // get the answer from the query string (eg. ?over18=false)
-  var radiogroup = req.query.radiogroup
+  var radiogroup = req.query.radiogroup;
 
   if (radiogroup === 'support-opt1') {
     // redirect to the relevant page
-    res.redirect('/support-opt1')
+    res.redirect('/support-opt1');
   } else if (radiogroup === 'support-opt2'){
     // if over18 is any other value (or is missing) render the page requested
     res.redirect('/support-opt2')
   } else if (radiogroup === 'support-opt3'){
     // if over18 is any other value (or is missing) render the page requested
-    res.redirect('/support-opt3')
+    res.redirect('/support-opt3');
   } else {
     // if over18 is any other value (or is missing) render the page requested
-    res.redirect('/support-opt4')
+    res.redirect('/support-opt4');
   }  
-})
+});
 
 
-module.exports = router
+module.exports = router;
 
