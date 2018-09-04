@@ -1,3 +1,78 @@
+# 7.6.0
+
+- Strip emails from urls for all GA requests to catch cases when GA generates a new event (e.g. page timings): ([PR 466](https://github.com/alphagov/govuk_frontend_toolkit/pull/466)).
+
+# 7.5.0
+
+- Implement optional stripping of dates for arguments passed to GA: ([PR #459](https://github.com/alphagov/govuk_frontend_toolkit/pull/459))
+
+# 7.4.2
+
+- Remove the deprecation warning in javascripts/govuk/selection-buttons.js as it is coupled to a different project which is not always used with this gem.
+
+# 7.4.1
+
+- Use a path, not a full url, as the `defaultPathForTrackPageview` because our analytics trackers expect the explicit page param to be a path, not a url ([PR #451](https://github.com/alphagov/govuk_frontend_toolkit/pull/451)).  Analytics sent with 7.3.0 and 7.4.0 are broken without this fix.
+
+# 7.4.0
+
+- Allow wrapping arguments to analytics as PII safe to tell the analytics code not to attempt to strip PII from the values: ([PR #448](https://github.com/alphagov/govuk_frontend_toolkit/pull/448))
+- Documentation improvements: ([PR #446](https://github.com/alphagov/govuk_frontend_toolkit/pull/446), [PR #447](https://github.com/alphagov/govuk_frontend_toolkit/pull/447))
+
+# 7.3.0
+
+- Strip PII from all arguments passed to GA.  Emails are stripped by default, postcodes can also be stripped if configured to do so: ([PR #435](https://github.com/alphagov/govuk_frontend_toolkit/pull/435)).
+- Update sass and govuk-lint dependencies: ([PR #444](https://github.com/alphagov/govuk_frontend_toolkit/pull/444)).
+
+# 7.2.0
+
+- Add custom dimension on TrackEvent to duplicate the url information that we normally send on a the `event action`. This will be used to join up with a scheduled custom upload called "External Link Status". We can only join uploads on custom dimensions, not on `event actions`, where we normally add the url info. ([PR #436](alphagov/govuk_frontend_toolkit#436) and [PR #439](alphagov/govuk_frontend_toolkit#439))
+
+# 7.1.0
+
+- Promote the details polyfill to Frontend Toolkit from GOV.UK Elements ([PR #426](https://github.com/alphagov/govuk_frontend_toolkit/pull/426)).
+
+# 7.0.1
+
+- Volume up and down buttons in the media player were overlapping the current volume percentage on focus. This fix keeps the large button touch area, but adjusts the focus state to be smaller. ([PR #429](https://github.com/alphagov/govuk_frontend_toolkit/pull/429)).
+
+# 7.0.0
+
+- Remove multivariate test library ([PR #420](https://github.com/alphagov/govuk_frontend_toolkit/pull/420)). If you need to continue using this library please copy the JavaScript and documentation from version 6.0.4 into your repository.
+
+# 6.0.4
+
+- Version bumping related to [govuk_frontend_toolkit_gem PR #15](https://github.com/alphagov/govuk_frontend_toolkit_gem/pull/15)
+
+# 6.0.3
+
+- Allow the passing of a [fields object](https://developers.google.com/analytics/devguides/collection/analyticsjs/field-reference)
+  to the `trackShare` method in analytics, in line with the Google Analytics
+  [social interactions API](https://developers.google.com/analytics/devguides/collection/analyticsjs/social-interactions)
+- Add documentation for new version releases
+
+# 6.0.2
+
+- Increase button focus specificity to avoid being overridden by govuk_template ([PR #409](https://github.com/alphagov/govuk_frontend_toolkit/pull/409))
+
+# 6.0.1
+
+- Fix a Javascript error in IE7 caused by trying to access a character within a string using array notation ([PR #407](https://github.com/alphagov/govuk_frontend_toolkit/pull/407))
+
+# 6.0.0
+
+- Breaking change: configure the GOV.UK Analytics tracker with `govukTrackerUrl` instead of `govukTrackerGifUrl` ([PR #405](https://github.com/alphagov/govuk_frontend_toolkit/pull/405))
+- Fix the sending of the GA Client ID with calls to the GOV.UK Tracker ([PR #404](https://github.com/alphagov/govuk_frontend_toolkit/pull/404))
+- Disable GA ad tracking ([PR #401](https://github.com/alphagov/govuk_frontend_toolkit/pull/401))
+
+# 5.2.0
+
+- Deprecate selection-buttons.js. Add a deprecation warning: Custom radio buttons and checkboxes (released in GOV.UK Elements 3.0.0) no longer require this JavaScript.
+
+# 5.1.3
+
+- Add an experimental GOV.UK analytics tracker. Given the URL to a single pixel GIF, it will encode analytics data as query string parameters on the call to the GIF ([PR #387](https://github.com/alphagov/govuk_frontend_toolkit/pull/387))
+
 # 5.1.2
 
 - Update show-hide-content.js to work with new `.multiple-choice` custom radio buttons and checkboxes, released in GOV.UK elements 3.0.0 ([PR #390](https://github.com/alphagov/govuk_frontend_toolkit/pull/390))

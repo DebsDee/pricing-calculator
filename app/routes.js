@@ -8,7 +8,6 @@ router.get('/', function (req, res) {
 
 router.get('/:version(v1|v2)', function (req, res) {
   req.session.data['version'] = req.params.version;
-  console.log(req.session.data)
   res.render(`${req.params.version}/version-index`);
 });
 
