@@ -1,7 +1,3 @@
-// NOTICE
-// IF you are using GOV.UK Elements 3.0,0 or above then you do not need to use
-// this script anymore as it uses a pure CSS solution.
-
 ;(function (global) {
   'use strict'
 
